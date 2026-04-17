@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Risk Analysis Dashboard | Serene Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fdfae7",
+                        "surface-container-highest": "#e6e3d0",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1c1c11",
+                        "on-secondary-container": "#742814",
+                        "on-surface-variant": "#3e494a",
+                        "primary-container": "#12828c",
+                        "surface-container": "#f1eedb",
+                        "primary": "#006770",
+                        "on-secondary-fixed-variant": "#7c2e19",
+                        "primary-fixed": "#96f1fc",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#507f69",
+                        "tertiary-fixed-dim": "#9fd1b8",
+                        "secondary-fixed": "#ffdbd2",
+                        "on-tertiary-container": "#fcfffb",
+                        "tertiary-fixed": "#bbeed4",
+                        "inverse-surface": "#313124",
+                        "outline-variant": "#bdc9ca",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#9a442d",
+                        "surface-tint": "#006971",
+                        "on-tertiary-fixed-variant": "#1f4f3c",
+                        "on-tertiary-fixed": "#002115",
+                        "outline": "#6e797a",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#79d4df",
+                        "secondary-container": "#fc9174",
+                        "surface-dim": "#dddbc8",
+                        "surface-bright": "#fdfae7",
+                        "on-secondary-fixed": "#3c0800",
+                        "primary-fixed-dim": "#79d4df",
+                        "on-background": "#1c1c11",
+                        "surface-container-low": "#f7f4e1",
+                        "tertiary": "#376651",
+                        "surface": "#fdfae7",
+                        "surface-variant": "#e6e3d0",
+                        "secondary-fixed-dim": "#ffb4a1",
+                        "surface-container-high": "#ece9d6",
+                        "inverse-on-surface": "#f4f1de",
+                        "on-primary-fixed": "#001f23",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#fdffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#004f56",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface flex min-h-screen">
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col w-64 h-screen py-6 bg-[#f1eedb] sticky top-0">
+<div class="px-6 mb-10">
+<h1 class="font-headline text-lg font-bold text-[#006770]">The Sanctuary</h1>
+<p class="text-xs text-on-surface/60">Your health companion</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 text-[#1c1c11]/70 px-4 py-3 hover:bg-[#fdfae7]/50 transition-all ease-in-out" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label">Home</span>
+</a>
+<a class="flex items-center gap-3 text-[#1c1c11]/70 px-4 py-3 hover:bg-[#fdfae7]/50 transition-all ease-in-out" href="#">
+<span class="material-symbols-outlined">female</span>
+<span class="font-label">Health Profile</span>
+</a>
+<a class="flex items-center gap-3 bg-[#ffffff] text-[#006770] rounded-xl mx-2 shadow-sm px-4 py-3 font-bold transition-all ease-in-out" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label">Risk Analysis</span>
+</a>
+<a class="flex items-center gap-3 text-[#1c1c11]/70 px-4 py-3 hover:bg-[#fdfae7]/50 transition-all ease-in-out" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label">Library</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Sarah Mitchell</p>
+<p class="text-[10px] opacity-60">Pro Account</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fdfae7]/80 backdrop-blur-xl md:static md:bg-transparent">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto w-full">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="text-2xl font-bold text-[#006770] font-headline tracking-tight">Serene Sanctuary</span>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-[#1c1c11]/60 hover:text-[#006770] transition-colors duration-300" href="#">Assessment</a>
+<a class="text-[#1c1c11]/60 hover:text-[#006770] transition-colors duration-300" href="#">Dashboard</a>
+<a class="text-[#1c1c11]/60 hover:text-[#006770] transition-colors duration-300" href="#">Resources</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-5 py-2 rounded-xl font-semibold shadow-sm active:scale-95 transition-all">Sign In</button>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-6 md:p-12 max-w-7xl mx-auto w-full space-y-12 mt-16 md:mt-0">
+<!-- Hero / Header Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-container/10 text-tertiary font-label text-sm font-semibold">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                        AI-Driven Health Analysis
+                    </div>
+<h2 class="text-5xl md:text-6xl font-headline font-extrabold text-on-surface leading-tight tracking-tighter">
+                        Your Personalized <br/><span class="text-primary italic">Health Landscape.</span>
+</h2>
+<p class="text-lg text-on-surface-variant max-w-md leading-relaxed">
+                        Our clinical-grade AI has synthesized your inputs, cycle history, and biometric data to map your current physiological risk profile.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined">download</span>
+                            Download Report
+                        </button>
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-primary px-8 py-3 rounded-xl font-bold flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined">search</span>
+                            Find a Specialist
+                        </button>
+</div>
+</div>
+<div class="relative">
+<!-- Conceptual Data Flow Viz -->
+<div class="aspect-square bg-surface-container rounded-[3rem] overflow-hidden flex items-center justify-center p-8 relative">
+<img alt="conceptual 3d abstract visualization of flowing biological data particles and neural connections in soft teal and coral tones" class="w-full h-full object-cover rounded-[2.5rem] opacity-90 mix-blend-multiply" data-alt="conceptual 3d abstract visualization of flowing biological data particles and neural connections in soft teal and coral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKHxbiGw9iJ1kQPWz7QaUDkVUmEYdh_Se3O5EQtpSATL01dSeYHffxoadACPxovntT-pUcP44eJ5VWZdQAZI0S8Qc4mNW_MvQwO21gLlkRx_lrPfcODrmyeBFOqE5cRUWBv_lml_OA-FWrICKtdpzKfslBSCE0-iEi8hZCPfWaWquHluUnD9Xlp2qmkRLZ03Hwcl9cDXtAqozemSSKbKxNklxl9Aq3CV1J5x5IpURXM9mw7kjPFY2T-3MTi8Q-uZb6elaHBHE--Waj"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Main Risk Gauges (Bento Grid Style) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- PCOS Risk Card -->
+<div class="glass-card p-10 rounded-[2.5rem] flex flex-col items-center text-center space-y-8 shadow-sm">
+<div class="space-y-2">
+<h3 class="text-2xl font-headline font-bold text-on-surface">PCOS Risk</h3>
+<p class="text-sm text-on-surface-variant uppercase tracking-widest font-bold">Polycystic Ovary Syndrome</p>
+</div>
+<!-- Gauge Mockup -->
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-secondary" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502.4" stroke-dashoffset="350" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-4xl font-headline font-extrabold text-secondary">Moderate</span>
+<span class="text-xs font-label text-on-surface-variant">Probability</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">
+                        Based on your reported irregular cycles and secondary symptoms, our AI suggests further screening.
+                    </p>
+</div>
+<!-- Anemia Risk Card -->
+<div class="glass-card p-10 rounded-[2.5rem] flex flex-col items-center text-center space-y-8 shadow-sm">
+<div class="space-y-2">
+<h3 class="text-2xl font-headline font-bold text-on-surface">Anemia Risk</h3>
+<p class="text-sm text-on-surface-variant uppercase tracking-widest font-bold">Iron Deficiency Analysis</p>
+</div>
+<!-- Gauge Mockup -->
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-tertiary" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502.4" stroke-dashoffset="440" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-4xl font-headline font-extrabold text-tertiary">Low</span>
+<span class="text-xs font-label text-on-surface-variant">Probability</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">
+                        Your reported energy levels and dietary habits align with a healthy iron profile.
+                    </p>
+</div>
+</section>
+<!-- Key Observations Section -->
+<section class="space-y-8">
+<div class="flex items-center justify-between">
+<h3 class="text-3xl font-headline font-bold">Key Observations</h3>
+<div class="h-[2px] flex-1 mx-8 bg-surface-container-highest hidden md:block"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-8 rounded-3xl space-y-4">
+<div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">cycle</span>
+</div>
+<h4 class="font-bold text-lg">Cycle Irregularity</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">AI detected a 12% variance in your last three cycles, which is the primary driver for the moderate PCOS risk score.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl space-y-4">
+<div class="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">sleep</span>
+</div>
+<h4 class="font-bold text-lg">Fatigue Patterns</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Reported fatigue levels correlate strongly with your luteal phase, suggesting normal hormonal shifts rather than systemic deficiency.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl space-y-4">
+<div class="w-12 h-12 bg-tertiary/10 rounded-2xl flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">nutrition</span>
+</div>
+<h4 class="font-bold text-lg">Nutrient Synergy</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Your high Vitamin C intake is likely assisting in optimal iron absorption, maintaining your low anemia risk profile.</p>
+</div>
+</div>
+</section>
+<!-- Medical Disclaimer -->
+<div class="bg-error-container/20 border-l-4 border-error p-8 rounded-2xl">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-error">warning</span>
+<div class="space-y-2">
+<p class="font-bold text-on-error-container">Medical Disclaimer</p>
+<p class="text-xs leading-relaxed text-on-error-container/80">
+                            The Risk Analysis provided by Serene Sanctuary is an AI-generated assessment for informational purposes only. It does not constitute medical advice, diagnosis, or treatment. The probabilities calculated are based on user-provided data and algorithmic patterns. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this dashboard.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center text-center gap-4 bg-[#f1eedb] mt-12">
+<div class="space-y-1">
+<p class="font-headline font-semibold text-primary">Serene Sanctuary</p>
+<p class="font-body text-xs leading-relaxed opacity-80 text-[#006770]">© 2024 Serene Sanctuary. AI-driven health insights.</p>
+</div>
+<div class="flex gap-6">
+<a class="font-body text-xs leading-relaxed opacity-80 text-[#1c1c11] hover:opacity-100" href="#">Medical Disclaimer</a>
+<a class="font-body text-xs leading-relaxed opacity-80 text-[#1c1c11] hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body text-xs leading-relaxed opacity-80 text-[#1c1c11] hover:opacity-100" href="#">Terms of Service</a>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-[#fdfae7] glass-card px-6 py-3 flex justify-between items-center z-50 border-t border-outline-variant/10">
+<button class="flex flex-col items-center gap-1 text-[#1c1c11]/60">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px]">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#1c1c11]/60">
+<span class="material-symbols-outlined">female</span>
+<span class="text-[10px]">Profile</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#006770] font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="text-[10px]">Analysis</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#1c1c11]/60">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px]">Library</span>
+</button>
+</div>
+</body></html>

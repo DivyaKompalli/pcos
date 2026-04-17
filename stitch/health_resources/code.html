@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Awareness Hub | Serene Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fdfae7",
+                        "surface-container-highest": "#e6e3d0",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1c1c11",
+                        "on-secondary-container": "#742814",
+                        "on-surface-variant": "#3e494a",
+                        "primary-container": "#12828c",
+                        "surface-container": "#f1eedb",
+                        "primary": "#006770",
+                        "on-secondary-fixed-variant": "#7c2e19",
+                        "primary-fixed": "#96f1fc",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#507f69",
+                        "tertiary-fixed-dim": "#9fd1b8",
+                        "secondary-fixed": "#ffdbd2",
+                        "on-tertiary-container": "#fcfffb",
+                        "tertiary-fixed": "#bbeed4",
+                        "inverse-surface": "#313124",
+                        "outline-variant": "#bdc9ca",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#9a442d",
+                        "surface-tint": "#006971",
+                        "on-tertiary-fixed-variant": "#1f4f3c",
+                        "on-tertiary-fixed": "#002115",
+                        "outline": "#6e797a",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#79d4df",
+                        "secondary-container": "#fc9174",
+                        "surface-dim": "#dddbc8",
+                        "surface-bright": "#fdfae7",
+                        "on-secondary-fixed": "#3c0800",
+                        "primary-fixed-dim": "#79d4df",
+                        "on-background": "#1c1c11",
+                        "surface-container-low": "#f7f4e1",
+                        "tertiary": "#376651",
+                        "surface": "#fdfae7",
+                        "surface-variant": "#e6e3d0",
+                        "secondary-fixed-dim": "#ffb4a1",
+                        "surface-container-high": "#ece9d6",
+                        "inverse-on-surface": "#f4f1de",
+                        "on-primary-fixed": "#001f23",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#fdffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#004f56",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfae7;
+        }
+        h1, h2, h3 {
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="flex min-h-screen text-on-surface">
+<!-- SideNavBar (Shared Component) -->
+<aside class="hidden md:flex flex-col w-64 h-screen py-6 bg-[#f1eedb] dark:bg-[#2a2a1d] fixed left-0 top-0 z-40 rounded-r-2xl">
+<div class="px-6 mb-10">
+<h2 class="font-['Manrope'] text-lg font-bold text-[#006770] dark:text-[#12828c]">The Sanctuary</h2>
+<p class="text-xs opacity-70">Your health companion</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center text-[#1c1c11]/70 dark:text-[#fdfae7]/70 px-4 py-3 hover:bg-[#fdfae7]/50 dark:hover:bg-[#1c1c11]/30 transition-all ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="home">home</span>
+<span class="font-['Inter'] text-sm">Home</span>
+</a>
+<a class="flex items-center text-[#1c1c11]/70 dark:text-[#fdfae7]/70 px-4 py-3 hover:bg-[#fdfae7]/50 dark:hover:bg-[#1c1c11]/30 transition-all ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="female">female</span>
+<span class="font-['Inter'] text-sm">Health Profile</span>
+</a>
+<a class="flex items-center text-[#1c1c11]/70 dark:text-[#fdfae7]/70 px-4 py-3 hover:bg-[#fdfae7]/50 dark:hover:bg-[#1c1c11]/30 transition-all ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="analytics">analytics</span>
+<span class="font-['Inter'] text-sm">Risk Analysis</span>
+</a>
+<!-- Active Tab: Library -->
+<a class="flex items-center bg-[#ffffff] dark:bg-[#1c1c11] text-[#006770] rounded-xl mx-2 shadow-sm px-4 py-3 transition-all ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="menu_book">menu_book</span>
+<span class="font-['Inter'] text-sm font-semibold">Library</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-low">
+<img alt="User profile" class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a smiling Indian woman in a professional setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-2WBlN2TGt96CpJG7zoZrelJzJFt78p4uXqKC1s7ntNO4FtvPNcwGQPPTUTJ2I_mg4Kquy6TvV4AiyYOtUIaL4f79zACR0g97ODNNWTrd4v3M6dbo6cTVD87xjxiVuNm04xMDI7kGSmu1t-33tNx105B3iEUdK8G80pr1sUbvzsmVxTq4fP-4b3S0oWRAgO80VO8BOWKpFnXNwTAFAmowbQTWmS5iHydYI6zuXGM0o7uUT7yyLYaJw29hG4n-s4U8O7-I1Nfj550g"/>
+<div>
+<p class="text-sm font-semibold">Ananya Iyer</p>
+<p class="text-[10px] opacity-60">Premium Member</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 p-6 md:p-12">
+<!-- Hero Section -->
+<header class="mb-12 max-w-4xl">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-xs font-semibold mb-4">
+<span class="material-symbols-outlined text-sm mr-2" data-icon="auto_awesome">auto_awesome</span>
+                Awareness Hub
+            </div>
+<h1 class="text-4xl md:text-5xl font-extrabold text-primary mb-6 tracking-tight">The Awareness Library</h1>
+<p class="text-lg text-on-surface-variant leading-relaxed max-w-2xl">
+                Curated insights and clinical guidance tailored for the modern Indian woman. Empowering you with knowledge on hormonal health and nutritional balance.
+            </p>
+</header>
+<!-- Category Filter -->
+<div class="flex gap-4 mb-10 overflow-x-auto pb-2 no-scrollbar">
+<button class="px-6 py-2 rounded-xl bg-primary text-on-primary font-medium text-sm whitespace-nowrap shadow-md">All Topics</button>
+<button class="px-6 py-2 rounded-xl bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors font-medium text-sm whitespace-nowrap">PCOS Care</button>
+<button class="px-6 py-2 rounded-xl bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors font-medium text-sm whitespace-nowrap">Anemia Prevention</button>
+<button class="px-6 py-2 rounded-xl bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors font-medium text-sm whitespace-nowrap">Nutrition</button>
+<button class="px-6 py-2 rounded-xl bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors font-medium text-sm whitespace-nowrap">Exercise</button>
+</div>
+<!-- Featured Section: Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
+<!-- Large Feature: Nutrition for PCOS -->
+<article class="md:col-span-8 group relative overflow-hidden rounded-3xl bg-surface-container-lowest transition-all hover:-translate-y-1 duration-300">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent z-10"></div>
+<img alt="Healthy Plate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Overhead shot of a colorful Mediterranean salad with fresh vegetables and grains, vibrant and naturally lit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtWFBw2WzlmL9UfU3GAKdrQGNHrFALALNSFIGyJuRdImnycAlAo_PMAOHgW9zBWU_k1orjl9vIeyBBCpOcR5wwugU7G9C-77Fvo35wdcoj-AujvXDP0UUjlZvpNHV_BHTNbtxt_-moqSGjR9AsqujfMxMNVtLRZ-GKw46HqvZtndvsxiFg5_vV-Pi413oSFI1cqf1gD8EMGuyWe7LxuBBQTzwve3iA8HPjvohVmasV1jGvq29BHIe6W6wWCSj25zJ2xxiLrZZAMYOu"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full mb-3 inline-block">MUST READ</span>
+<h3 class="text-3xl font-bold text-on-primary mb-2">Nutrition for PCOS: The Indian Diet Solution</h3>
+<p class="text-on-primary/80 text-sm max-w-md mb-4">Balancing traditional flavors with low-GI requirements to manage insulin resistance effectively.</p>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2 bg-on-primary text-primary font-bold rounded-xl text-sm">Read Article</button>
+<span class="text-on-primary/60 text-xs flex items-center"><span class="material-symbols-outlined text-xs mr-1" data-icon="schedule">schedule</span> 8 min read</span>
+</div>
+</div>
+</article>
+<!-- Side Card: Understanding Hemoglobin -->
+<article class="md:col-span-4 bg-secondary-container/10 border-t-4 border-secondary p-8 rounded-3xl flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-secondary/20 flex items-center justify-center text-secondary mb-6">
+<span class="material-symbols-outlined" data-icon="bloodtype">bloodtype</span>
+</div>
+<h3 class="text-2xl font-bold text-on-secondary-container mb-3">Understanding Hemoglobin</h3>
+<p class="text-on-secondary-container/70 text-sm leading-relaxed mb-6">
+                        Why iron deficiency is prevalent in 53% of Indian women and how to interpret your latest CBC results.
+                    </p>
+</div>
+<a class="inline-flex items-center font-bold text-secondary text-sm group" href="#">
+                    Explore Markers
+                    <span class="material-symbols-outlined ml-2 transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</article>
+<!-- Small Card: Exercise -->
+<article class="md:col-span-4 bg-surface-container-low p-6 rounded-3xl group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="relative h-40 rounded-2xl overflow-hidden mb-4">
+<img alt="Yoga" class="w-full h-full object-cover" data-alt="A woman practicing yoga in a sun-drenched minimalist studio with warm wood floors and greenery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmqwusIJQsEVfHOh5i0Y7TNz8W-Ln9H4eNAVxNCUvsTI-IOh5D5Useds5yET4Z58kW8hTbcqe16oeOOUIz54kw4DngFT09dDNRHFV0HndSE7xjrfbiZtTuADjGXzqbRSDoi6nh2dq5pIgyBzZ6vSkfTdrQPC53ZJB2WR2eQdg5mlddk9ZXIavoHPmSLx2Rw-S2XuzPEIrPDhdyMdivBv2brFZvTkpgHxfewNH2YCeukKThyXN3Y0sROPcx71I340D1YLSv_mW1Wj9w"/>
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+<h4 class="text-lg font-bold mb-2">The Role of Exercise</h4>
+<p class="text-xs text-on-surface-variant mb-4">Beyond weight loss: How movement stabilizes hormones and boosts mood.</p>
+<div class="flex justify-between items-center text-[10px] font-semibold text-tertiary uppercase tracking-wider">
+<span>Category: Lifestyle</span>
+<span class="material-symbols-outlined" data-icon="bookmark_border">bookmark_border</span>
+</div>
+</article>
+<!-- Small Card: Gut Health -->
+<article class="md:col-span-4 bg-surface-container-low p-6 rounded-3xl group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="relative h-40 rounded-2xl overflow-hidden mb-4">
+<img alt="Indian Spices" class="w-full h-full object-cover" data-alt="Close up of traditional Indian spices like turmeric and cumin arranged aesthetically on a rustic surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuMPxj0jDaSSk77yEJi4Q5kdiq8xwcSQuGDPvNtNc2o-XctTH2qMzgZb02vanDeKbr3eaL1JpZEcFhZqX4d_KAClb-ROB_jOCKnZsMioz81YkTx3NXs5TQbh6V_NFiewO26n8EYVKRWeRj3JrOa_HwaK9IdDwpyTJIyi2EmAvsqWMTWAC27Qs3FmzKwFhMYUvjIjeT-ercbfX1c2XoiEPYH_IXqJDd_BoTZbFdEQScyNZXjOTZ0hV0gmRXk1MtYP3imoKknB2gh9H-"/>
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+<h4 class="text-lg font-bold mb-2">Ayurvedic Insights</h4>
+<p class="text-xs text-on-surface-variant mb-4">Integrating ancient wisdom with modern medical science for hormonal balance.</p>
+<div class="flex justify-between items-center text-[10px] font-semibold text-tertiary uppercase tracking-wider">
+<span>Category: Holistic</span>
+<span class="material-symbols-outlined" data-icon="bookmark_border">bookmark_border</span>
+</div>
+</article>
+<!-- Small Card: Mental Health -->
+<article class="md:col-span-4 bg-surface-container-low p-6 rounded-3xl group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="relative h-40 rounded-2xl overflow-hidden mb-4">
+<img alt="Meditation" class="w-full h-full object-cover" data-alt="A tranquil scene of a woman meditating outdoors during a soft sunrise with misty trees in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWbQhFhAibCdZfl9OVSWAfQl162Rt25btWsWo83B3CdzW670UXc0wcPL0luL5nT-MEZROaNQeZ2NRRa0wabxL4Mn7kBuEjhdnd6CyJpovKJgzSL4cuoaf1NRM2Qe8EUfz0CYWXXGgLkY4INVvxOZjh4RmqaCVj-pIlm1gbooPvlAIl2W8KilqowxbANsN5du9vhylBnKdZlt5YB8y0ygL6F2_sIxTKI2y_IeKu4Q-c_TY9tiRz7YsL9HsCrvet_b-1T2L9qWScrzNg"/>
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+<h4 class="text-lg font-bold mb-2">Mental Wellness</h4>
+<p class="text-xs text-on-surface-variant mb-4">Addressing the often-ignored link between PCOS and anxiety.</p>
+<div class="flex justify-between items-center text-[10px] font-semibold text-tertiary uppercase tracking-wider">
+<span>Category: Mindset</span>
+<span class="material-symbols-outlined" data-icon="bookmark_border">bookmark_border</span>
+</div>
+</article>
+</section>
+<!-- Awareness CTA / Newsletter Section -->
+<section class="mb-20 glass-card p-10 md:p-16 rounded-[2.5rem] relative overflow-hidden text-center">
+<div class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="text-3xl font-bold text-primary mb-4">Empower Your Inbox</h2>
+<p class="text-on-surface-variant mb-8">Join 15,000+ Indian women receiving weekly evidence-based health insights, recipes, and specialist advice.</p>
+<form class="flex flex-col sm:flex-row gap-3">
+<input class="flex-1 px-6 py-4 rounded-2xl bg-surface border-none focus:ring-2 focus:ring-primary/20 text-sm" placeholder="Enter your email address" type="email"/>
+<button class="px-8 py-4 bg-primary text-on-primary font-bold rounded-2xl shadow-lg hover:shadow-primary/20 transition-all" type="submit">Subscribe Now</button>
+</form>
+<p class="mt-6 text-[10px] text-on-surface-variant opacity-60">We respect your privacy. Unsubscribe at any time.</p>
+</div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-12 flex flex-col md:flex-row justify-between items-center text-center gap-4 bg-[#f1eedb] dark:bg-[#1c1c11] rounded-3xl mt-12 px-8">
+<div class="flex flex-col md:items-start items-center">
+<span class="font-['Manrope'] font-semibold text-primary">Serene Sanctuary</span>
+<p class="font-['Inter'] text-xs leading-relaxed opacity-80 mt-1">© 2024 Serene Sanctuary. AI-driven health insights.</p>
+</div>
+<div class="flex gap-6">
+<a class="font-['Inter'] text-xs text-[#1c1c11] dark:text-[#fdfae7] opacity-80 hover:opacity-100 transition-opacity underline" href="#">Medical Disclaimer</a>
+<a class="font-['Inter'] text-xs text-[#1c1c11] dark:text-[#fdfae7] opacity-80 hover:opacity-100 transition-opacity underline" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-xs text-[#1c1c11] dark:text-[#fdfae7] opacity-80 hover:opacity-100 transition-opacity underline" href="#">Terms of Service</a>
+</div>
+</footer>
+</main>
+<!-- Mobile Navigation (Responsive Pivot) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface/80 backdrop-blur-xl border-t border-outline-variant/10 px-6 py-3 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px]">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="female">female</span>
+<span class="text-[10px]">Health</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="text-[10px] font-bold">Library</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px]">Profile</span>
+</button>
+</nav>
+</body></html>
