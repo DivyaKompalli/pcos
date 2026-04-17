@@ -16,7 +16,7 @@ app = FastAPI(title="PCOS & Anemia Risk API")
 # Setup CORS for the React frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Allow all origins for dev
+    allow_origins=["https://pcos-theta-three.vercel.app"], # Allow all origins for dev
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
