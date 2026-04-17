@@ -7,3 +7,5 @@ venv/
 *.joblib
 .DS_Store
 *.log
+.streamlit/
+.env*
