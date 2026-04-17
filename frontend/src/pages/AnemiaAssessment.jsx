@@ -22,7 +22,8 @@ export function AnemiaAssessment() {
     e.preventDefault()
     setLoading(true)
     try {
-      const res = await axios.post('http://localhost:8000/api/predict/anemia', formData)
+      const apiUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+      const res = await axios.post(`${apiUrl}/api/predict/anemia`, formData)
       setResult(res.data)
     } catch (error) {
       alert("Error: " + (error.response?.data?.detail || error.message))

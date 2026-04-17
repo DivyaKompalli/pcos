@@ -9,7 +9,8 @@ export function AdminDashboard() {
   const [stats, setStats] = useState(null)
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/admin/stats')
+    const apiUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+    axios.get(`${apiUrl}/api/admin/stats`)
       .then(res => setStats(res.data))
       .catch(err => console.error("Could not load stats", err))
   }, [])

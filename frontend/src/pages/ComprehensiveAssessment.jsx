@@ -27,9 +27,11 @@ export function ComprehensiveAssessment() {
       const pcosData = { ...formData }
       const anemiaData = { ...formData }
       
+      const apiUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+      
       const [resPcos, resAnemia] = await Promise.all([
-        axios.post('http://localhost:8000/api/predict/pcos', pcosData),
-        axios.post('http://localhost:8000/api/predict/anemia', anemiaData)
+        axios.post(`${apiUrl}/api/predict/pcos`, pcosData),
+        axios.post(`${apiUrl}/api/predict/anemia`, anemiaData)
       ])
       
       setResult({ pcos: resPcos.data, anemia: resAnemia.data })

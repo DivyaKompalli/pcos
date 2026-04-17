@@ -60,6 +60,11 @@ class ChatInput(BaseModel):
     history: List[Dict[str, str]] = []
 
 def get_gemini_api_key():
+    import os
+    env_key = os.environ.get("GEMINI_API_KEY")
+    if env_key:
+        return env_key
+        
     try:
         with open(".streamlit/secrets.toml", "r") as f:
             for line in f:

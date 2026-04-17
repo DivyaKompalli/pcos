@@ -31,7 +31,8 @@ export function Chatbot() {
       // Send the current history excluding the immediate new message
       const history = messages.slice(1).map(m => ({ role: m.role, content: m.content }))
       
-      const res = await axios.post('http://localhost:8000/api/chat', {
+      const apiUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+      const res = await axios.post(`${apiUrl}/api/chat`, {
         message: userMessage.content,
         history: history
       })
